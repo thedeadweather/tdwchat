@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Rooms</h1>
+
+<ul class="list-unstyled">
+  <%= render @rooms %>
+</ul>
+
+
+<div class="mt-2">
+  <%= render 'rooms/form', room: @room %>
+</div>
+
+<div class="row mt-3">
+  <div class="col-6 offset-3">
+  	<h3 class="mb-1 text-center">Online:</h3>
+  	<div class="d-flex justify-content-center" id="online">
+      <%= render @users %>
+    </div>
+  </div>
+</div>

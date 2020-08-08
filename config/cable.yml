@@ -6,5 +6,5 @@ test:
 
 production:
   adapter: redis
-  url: redis://redistogo:64e07a922a4bb562e2533ecb27da9baa@pike.redistogo.com:10309/
+  url: redistogo-cylindrical-15474
   channel_prefix: tdwchat_production

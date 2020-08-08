@@ -6,5 +6,5 @@ test:
 
 production:
   adapter: redis
-  url: ...
-  channel_prefix: instatalk_production
+  url: redis://redistogo:64e07a922a4bb562e2533ecb27da9baa@pike.redistogo.com:10309/
+  channel_prefix: tdwchat_production

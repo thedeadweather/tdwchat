@@ -8,12 +8,13 @@ jQuery(document).on 'turbolinks:load', ->
 
     received: (data) ->
       # Called when there's incoming data on the websocket for this channel
+      { id, nickname, online } = data.user
       # Ищем на странице выведенного юзера
-      element = document.getElementById(data['id']);
+      element = document.getElementById(id)
       # Если статус онлайн и юзер еще не выведен на экран, то выводим
-      if data['status'] == 'on' && !element
-        $('#online').append data['show']
+      if online && !element
+        $('#online').append("<div class='text-success mr-2' id='#{id}''>#{nickname}</div>")
       # Если статус офлайн, то удаляем
-      else if data['status'] == 'off'
+      else if !online
         element.remove()
       

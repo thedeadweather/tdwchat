@@ -6,5 +6,5 @@ test:
 
 production:
   adapter: redis
-  url: redis://redistogo:2764ec1f283b6b3bad5013c695c934ea@crestfish.redistogo.com:11686/
+  url: redis://redistogo:ad4ae83bd72e9db574d08d1c4d725d29@crestfish.redistogo.com:11659/
   channel_prefix: tdwchat_production

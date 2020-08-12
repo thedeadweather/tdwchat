@@ -4,9 +4,9 @@ class OnlineService
   end
 
   def make_online!
-    # меняем статус пользователя в БД если был офлайн
-    @user.update!(online: true) unless @user.online
-    broadcast @user
+    # меняем статус пользователя в БД если не был онлайн до этого
+    @user.update!(online: true) unless @user.online?
+    broadcast
   end
 
   def make_offline!
@@ -19,14 +19,14 @@ class OnlineService
     # отправлем инфу о юзере, которого клиент должен удалить со станицы
     if user_connections.empty?
       @user.update!(online: false)
-      broadcast @user
+      broadcast
     end
   end
 
   private
 
-  def broadcast(user)
+  def broadcast
     ActionCable.server.broadcast "online_channel",
-      { user: user }
+      { user: @user }
   end
 end

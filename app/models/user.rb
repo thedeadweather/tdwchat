@@ -3,6 +3,8 @@ class User < ApplicationRecord
 
   has_many :messages, dependent: :destroy
 
+  scope :online, -> { where(online: true) }
+
   private
 
   def generate_nickname

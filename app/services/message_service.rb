@@ -1,3 +1,4 @@
+# сервис для отправки сообщений по каналам actioncable
 class MessageService
   def initialize(body:, user:, room:)
     @body = body
@@ -21,6 +22,7 @@ class MessageService
       message: render_message
   end
 
+  # в метод broadcast будем передавать паршл с сообщением
   def render_message
     ApplicationController.renderer.render(partial: 'messages/message', locals: {
       message: @message

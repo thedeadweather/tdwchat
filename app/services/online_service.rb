@@ -1,3 +1,4 @@
+# сервис для обновления онлайн статуса юзеров и передачи инфы клиенту
 class OnlineService
   def initialize(user:)
     @user = user

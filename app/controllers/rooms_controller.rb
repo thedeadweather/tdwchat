@@ -4,7 +4,8 @@ class RoomsController < ApplicationController
   def index
     @rooms = Room.all
     @room = Room.new
-    @users = User.where(online: true)
+    #скоуп для юзеров, у которых поле online: true
+    @users = User.online
   end
 
   def show
